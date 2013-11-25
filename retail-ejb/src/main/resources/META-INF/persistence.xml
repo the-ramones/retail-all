@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="retailPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>org.retail.billing.BankAccount</class>
+        <class>org.retail.billing.BillingDetails</class>
+        <class>org.retail.billing.CreditCard</class>
+        <class>org.retail.entity.Feature</class>
+        <class>org.retail.entity.Order</class>
+        <class>org.retail.entity.Family</class>
+        <class>org.retail.entity.OrderedProduct</class>
+        <class>org.retail.entity.Product</class>
+        <class>org.retail.entity.client.Customer</class>
+        <class>org.retail.entity.client.CustomerDetails</class>
+        <class>org.retail.entity.finance.Discount</class>
+        <class>org.retail.entity.finance.Price</class>
+        <class>org.retail.entity.operation.Payment</class>
+        <class>org.retail.info.Address</class>
+        <class>org.retail.shipment.Shipment</class>
+        <class>org.retail.shipment.ShipmentState</class>
+        <!-- security -->
+        <class>org.retail.user.Authority</class>
+        <class>org.retail.user.User</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.connection.username" value="netbeans"/>
+            <property name="hibernate.connection.password" value="netbeans"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>      
+            <property name="hibernate.connection.url" value="jdbc:mysql://127.0.0.1:3306/retail?autoReconnect=true"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        </properties>       
+    </persistence-unit>
+</persistence>
