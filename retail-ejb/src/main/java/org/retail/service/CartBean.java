@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
+import javax.ejb.Remote;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
 import org.retail.service.exception.BookException;
@@ -17,6 +18,7 @@ import org.retail.service.helpers.IdVerifier;
  *
  * @author the-ramones
  */
+@Remote(value = Cart.class)
 @Stateful
 public class CartBean implements Cart {
 

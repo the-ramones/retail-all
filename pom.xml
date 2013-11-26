@@ -11,5 +11,6 @@
         <module>retail-ear</module>
         <module>retail-ejb</module>
         <module>retail-web</module>
+        <module>retail-client</module>
     </modules>
 </project>

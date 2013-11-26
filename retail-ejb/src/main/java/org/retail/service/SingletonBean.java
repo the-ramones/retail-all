@@ -7,6 +7,7 @@ import javax.ejb.AccessTimeout;
 import javax.ejb.ConcurrencyManagement;
 import javax.ejb.ConcurrencyManagementType;
 import javax.ejb.DependsOn;
+import javax.ejb.Local;
 import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
@@ -24,6 +25,7 @@ import javax.ejb.Timer;
 // if not specified, @Lock(LockType.WRITE) is assumed
 @Lock(LockType.READ)
 @AccessTimeout(unit = TimeUnit.SECONDS, value = 4L)
+@Local(value = Count.class)
 @Singleton
 public class SingletonBean implements Count {
 

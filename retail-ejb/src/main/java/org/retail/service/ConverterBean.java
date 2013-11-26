@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
-import javax.faces.convert.Converter;
 
 /**
  * Base currency: Japanese yen

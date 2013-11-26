@@ -11,6 +11,8 @@ import javax.ejb.Timeout;
 import javax.ejb.Timer;
 import javax.ejb.TimerConfig;
 import javax.ejb.TimerService;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 
 /**
  * Sometime business flow relies on timed events, actions repeated in time.
@@ -40,10 +42,12 @@ import javax.ejb.TimerService;
  */
 @Singleton
 @Startup
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class TimedBean {
     
     @Resource
     TimerService timerService;
+    
     private static final Logger logger = Logger.getLogger(TimedBean.class.getName());
     
     public TimedBean() {
@@ -54,6 +58,11 @@ public class TimedBean {
      */
     @Timeout
     public void programmaticTimeout(Timer timer) {
+        /*
+         * Cancel the timer
+         */
+        timer.cancel();
+        
         timer.isPersistent();
         timer.isCalendarTimer();
         timer.getTimeRemaining();
@@ -66,7 +75,8 @@ public class TimedBean {
     }
     
     @Schedules({
-        @Schedule(minute = "*", hour = "*")
+        @Schedule(minute = "*", hour = "*"),
+        @Schedule(dayOfWeek = "Mon")
     })
     public void automaticTimeout() {
         logger.info("automatic timeout (@Schedule)");
