@@ -12,5 +12,6 @@
         <module>retail-ejb</module>
         <module>retail-web</module>
         <module>retail-client</module>
+        <module>retail-rest</module>
     </modules>
 </project>
