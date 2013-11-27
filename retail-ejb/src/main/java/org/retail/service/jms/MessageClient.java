@@ -18,6 +18,7 @@ public class MessageClient {
 
     @Resource(mappedName = "jms/ConnectionFactory")
     private static ConnectionFactory connectionFactory;
+    
     @Resource(mappedName = "jms/Queue")
     private static Queue queue;
     Connection connection;
