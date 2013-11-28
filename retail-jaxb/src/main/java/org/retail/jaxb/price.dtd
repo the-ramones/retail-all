@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/price.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE xsd:schema SYSTEM "price.dtd">
+
+    <xsd:schema>
+    ...
+    </xsd:schema>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT xsd:schema (xsd:element|xsd:complexType)*>
+<!ATTLIST xsd:schema
+    version CDATA #IMPLIED
+    xmlns:xsd CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT xsd:element EMPTY>
+<!ATTLIST xsd:element
+    ref CDATA #IMPLIED
+    type CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT xsd:complexType (xsd:sequence|xsd:attribute)*>
+<!ATTLIST xsd:complexType
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT xsd:sequence (xsd:element)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT xsd:attribute EMPTY>
+<!ATTLIST xsd:attribute
+    use CDATA #IMPLIED
+    type CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >

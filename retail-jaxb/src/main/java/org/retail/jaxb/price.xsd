@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="price" type="price"/>
+    <xsd:element name="item" type="item"/>
+    <xsd:element name="comment" type="xsd:string"/>
+
+    <xsd:complexType name="price">
+        <xsd:sequence>
+            <xsd:element name="value" type="xsd:decimal"/>
+            <xsd:element name="date" type="xsd:dateTime"/>
+            <xsd:element name="items" type="items"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:int" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="items">
+        <xsd:sequence>
+            <xsd:element name="item" type="item" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="item">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element ref="comment" minOccurs="0"/>
+            <xsd:element name="partNumber" type="partNumber"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:long" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="partNumber">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{3}-[A-Z]{2}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
+

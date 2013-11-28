@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/D:/from_c/retail/retail/retail-rest/src/main/java/org/retail/rs/data/price.xsd" uri="src/main/resources/jaxb/retail-price/price.xsd"/>
+    <system systemId="file:/D:/from_c/retail/retail/retail-jaxb/src/main/java/org/retail/jaxb/sample/po.xsd" uri="src/main/resources/jaxb/retail-sample/po.xsd"/>
+    <system systemId="file:/D:/from_c/retail/retail/retail-jaxb/src/main/java/org/retail/jaxb/price.xsd" uri="src/main/resources/jaxb/retail-price/price.xsd"/>
+</catalog>

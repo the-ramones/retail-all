@@ -2,6 +2,8 @@
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:element name="price" type="price"/>
+    
+    <xs:element name="item" type="item"/>
 
     <xs:complexType name="item">
         <xs:sequence>

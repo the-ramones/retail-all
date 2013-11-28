@@ -13,5 +13,6 @@
         <module>retail-web</module>
         <module>retail-client</module>
         <module>retail-rest</module>
+        <module>retail-jaxb</module>
     </modules>
 </project>
