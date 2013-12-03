@@ -13,7 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import org.retail.entity.measure.ProductUnit;
 
 /**
  *
@@ -27,6 +30,7 @@ public class Product implements Serializable {
     private String title;
     private Set<Feature> features;
     private Family family;
+    private ProductUnit productUnit;
     private String description;
 
     public Product() {
@@ -52,6 +56,16 @@ public class Product implements Serializable {
 
     public void setItemId(Long itemId) {
         this.itemId = itemId;
+    }
+
+    @OneToOne
+    @PrimaryKeyJoinColumn                    // join tables on PrimaryKey
+    public ProductUnit getProductUnit() {
+        return productUnit;
+    }
+
+    public void setProductUnit(ProductUnit productUnit) {
+        this.productUnit = productUnit;
     }
 
     @Column(length = 255, nullable = false)

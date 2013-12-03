@@ -20,6 +20,10 @@
         <class>org.retail.info.Address</class>
         <class>org.retail.shipment.Shipment</class>
         <class>org.retail.shipment.ShipmentState</class>
+        <!-- BI -->
+        <class>org.retail.stock.Stock</class>
+        <class>org.retail.entity.measure.ProductUnit</class>
+        <class>org.retail.entity.measure.Unit</class>
         <!-- security -->
         <class>org.retail.user.Authority</class>
         <class>org.retail.user.User</class>
