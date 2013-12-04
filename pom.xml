@@ -14,5 +14,8 @@
         <module>retail-client</module>
         <module>retail-rest</module>
         <module>retail-jaxb</module>
-    </modules>
+    <module>retail-ws</module>
+    <module>retail-ws-client</module>
+    <module>retail-ws-standalone-client</module>
+  </modules>
 </project>

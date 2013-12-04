@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://www.retail.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.retail.org/wsdl/">
+
+<xs:element name="RetailException" type="tns:RetailException"/>
+
+<xs:element name="discountByDate" type="tns:discountByDate"/>
+
+<xs:element name="discountByDateResponse" type="tns:discountByDateResponse"/>
+
+<xs:element name="getDiscount" type="tns:getDiscount"/>
+
+<xs:element name="getDiscountResponse" type="tns:getDiscountResponse"/>
+
+<xs:element name="getPrice" type="tns:getPrice"/>
+
+<xs:element name="getPriceResponse" type="tns:getPriceResponse"/>
+
+<xs:element name="info" type="tns:info"/>
+
+<xs:element name="infoResponse" type="tns:infoResponse"/>
+
+<xs:element name="priceByDate" type="tns:priceByDate"/>
+
+<xs:element name="priceByDateResponse" type="tns:priceByDateResponse"/>
+
+<xs:element name="testOperation" type="tns:testOperation"/>
+
+<xs:element name="testOperationResponse" type="tns:testOperationResponse"/>
+
+<xs:complexType name="testOperation">
+<xs:sequence>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="testOperationResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:price" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="price">
+<xs:sequence>
+<xs:element name="endorsedFrom" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="feature" type="tns:feature" minOccurs="0"/>
+<xs:element name="item" type="tns:product" minOccurs="0"/>
+<xs:element name="priceId" type="xs:long" minOccurs="0"/>
+<xs:element name="value" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="feature">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="featureId" type="xs:long" minOccurs="0"/>
+<xs:element name="item" type="tns:product" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="family" type="tns:family" minOccurs="0"/>
+<xs:element name="features" type="tns:feature" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="itemId" type="xs:long" minOccurs="0"/>
+<xs:element name="productUnit" type="tns:productUnit" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="family">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="familyId" type="xs:long" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productUnit">
+<xs:sequence>
+<xs:element name="orderMultiplier" type="xs:decimal" minOccurs="0"/>
+<xs:element name="orderUnit" type="tns:unit" minOccurs="0"/>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+<xs:element name="productUnitId" type="xs:long" minOccurs="0"/>
+<xs:element name="stockUnit" type="tns:unit" minOccurs="0"/>
+<xs:element name="viewMultiplier" type="xs:decimal" minOccurs="0"/>
+<xs:element name="viewUnit" type="tns:unit" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unit">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="unitId" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RetailException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPrice">
+<xs:sequence>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+<xs:element name="feature" type="tns:feature" minOccurs="0"/>
+<xs:element name="family" type="tns:family" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPriceResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:price" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="discountByDate">
+<xs:sequence>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+<xs:element name="feature" type="tns:feature" minOccurs="0"/>
+<xs:element name="family" type="tns:family" minOccurs="0"/>
+<xs:element name="date" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="discountByDateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:discount" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="discount">
+<xs:sequence>
+<xs:element name="discountId" type="xs:long" minOccurs="0"/>
+<xs:element name="endorsedFrom" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="family" type="tns:family" minOccurs="0"/>
+<xs:element name="feature" type="tns:feature" minOccurs="0"/>
+<xs:element name="item" type="tns:product" minOccurs="0"/>
+<xs:element name="value" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDiscount">
+<xs:sequence>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+<xs:element name="feature" type="tns:feature" minOccurs="0"/>
+<xs:element name="family" type="tns:family" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDiscountResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:discount" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="priceByDate">
+<xs:sequence>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+<xs:element name="feature" type="tns:feature" minOccurs="0"/>
+<xs:element name="family" type="tns:family" minOccurs="0"/>
+<xs:element name="date" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="priceByDateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:price" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="info">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="infoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -17,17 +17,17 @@ public interface ProductSei {
 
     public String info();
 
-//    public Product getProduct(Long productId);
-//
-//    public List<Product> products();
-//
-//    public List<Product> products(Family family, Feature feature);
-//
-//    public List<Product> productsInStock();
-//
-//    public Quantity productQuantityInStock();
-//
-//    public List<Product> productsInStockByDate(Calendar date);
-//
-//    public Quantity productQuantityInStockByDate(Calendar date);
+    public Product getProduct(Long productId);
+
+    public List<Product> products();
+
+    public List<Product> products(Family family, Feature feature);
+
+    public List<Product> productsInStock();
+
+    public Quantity productQuantityInStock();
+
+    public List<Product> productsInStockByDate(Calendar date);
+
+    public Quantity productQuantityInStockByDate(Calendar date);
 }

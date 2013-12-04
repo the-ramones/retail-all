@@ -19,14 +19,15 @@ import javax.ejb.Timer;
  *
  * @author the-ramones
  */
+@Singleton
 @Startup
-@DependsOn("CartBean")
+// must be Singleton to work properly
+// @DependsOn("CartBean")
 @ConcurrencyManagement(ConcurrencyManagementType.CONTAINER)
 // if not specified, @Lock(LockType.WRITE) is assumed
 @Lock(LockType.READ)
 @AccessTimeout(unit = TimeUnit.SECONDS, value = 4L)
 @Local(value = Count.class)
-@Singleton
 public class SingletonBean implements Count {
 
     private final static Logger logger = Logger.getLogger(SingletonBean.class.getName());
