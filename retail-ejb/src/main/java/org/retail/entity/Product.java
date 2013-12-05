@@ -1,6 +1,7 @@
 package org.retail.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -41,6 +42,24 @@ public class Product implements Serializable {
         this.title = title;
         this.features = features;
         this.family = family;
+    }
+
+    public Product(String title, Set<Feature> features, Family family, ProductUnit productUnit, String description) {
+        this.title = title;
+        this.features = features;
+        this.family = family;
+        this.productUnit = productUnit;
+        this.description = description;
+    }
+
+    public Product(String title, Feature feature, Family family, ProductUnit productUnit, String description) {
+        this.title = title;
+        this.family = family;
+        this.productUnit = productUnit;
+        this.description = description;
+        Set<Feature> features = new HashSet<Feature>();
+        features.add(feature);
+        this.features = features;
     }
 
     public Product(Long itemId, String title) {

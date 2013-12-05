@@ -14,6 +14,7 @@ import org.retail.entity.client.Customer;
 @DiscriminatorValue("BA")
 public class BankAccount extends BillingDetails implements Serializable {
 
+    private static final long serialVersionUID = -3082087016342644227L;
     private String ibaNumber;
 
     public BankAccount() {

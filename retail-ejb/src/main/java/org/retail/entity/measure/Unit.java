@@ -22,6 +22,17 @@ public class Unit implements Serializable {
     public Unit(String name) {
         this.name = name;
     }
+
+    public Unit(Integer unitId, String name, String description) {
+        this.unitId = unitId;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Unit(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
     private Integer unitId;
     private String name;
     private String description;
@@ -84,7 +95,6 @@ public class Unit implements Serializable {
     public String toString() {
         return "Unit{" + "unitId=" + unitId + ", name=" + name + '}';
     }
-    
     public static final String PIECE = "piece";
     public static final String METER = "meter";
     public static final String SQUARE_METER = "square meter";

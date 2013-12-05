@@ -1,4 +1,4 @@
-package org.retail.boot;
+package org.retail.bean;
 
 import com.mysql.jdbc.PerConnectionLRUFactory;
 import javax.persistence.EntityManager;
@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
  *
  * @author Paul Kulitski
  */
-public class FillUp {
+public class Fillup {
 
     static EntityManager em;
 

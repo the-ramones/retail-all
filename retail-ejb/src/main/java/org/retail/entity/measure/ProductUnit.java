@@ -31,7 +31,7 @@ public class ProductUnit implements Serializable {
 
     public ProductUnit() {
     }
-
+    
     @Id
     public Long getProductUnitId() {
         return productUnitId;

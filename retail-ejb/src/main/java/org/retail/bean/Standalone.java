@@ -1,4 +1,4 @@
-package org.retail.boot;
+package org.retail.bean;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -9,7 +9,7 @@ import org.retail.info.Address;
  *
  * @author Paul Kulitski
  */
-public class Bootstrap {
+public class Standalone {
 
     static EntityManager em;
 
@@ -18,6 +18,7 @@ public class Bootstrap {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("retailPU");
         em = emf.createEntityManager();
         test();
+        em.close();
         System.out.println("Test finished...");
     }
 

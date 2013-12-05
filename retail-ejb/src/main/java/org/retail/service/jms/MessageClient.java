@@ -31,7 +31,7 @@ public class MessageClient {
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             messageProducer = session.createProducer(queue);
         } catch (JMSException ex) {
-            throw new RetailException();
+            throw new RetailException(ex);
         }
     }
 
@@ -41,7 +41,7 @@ public class MessageClient {
             textMessage.setText("JMS message into the queue");
             messageProducer.send(textMessage);
         } catch (JMSException ex) {
-            throw new RetailException();
+            throw new RetailException(ex);
         }
 
     }

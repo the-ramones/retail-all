@@ -11,4 +11,5 @@ import javax.xml.ws.WebServiceRef;
 public class PriceServiceClient {
     
    // @WebServiceRef(wsdlLocation= "localhost:8080/retail-ws/PriceService")
+    
 }

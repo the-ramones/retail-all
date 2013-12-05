@@ -21,6 +21,7 @@ import org.retail.entity.client.Customer;
  * @author Paul Kulitski
  */
 @Entity
+//@MappedSuperclass
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "billingDetailsType")
 public abstract class BillingDetails implements Serializable {

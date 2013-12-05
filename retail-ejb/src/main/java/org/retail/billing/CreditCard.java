@@ -13,6 +13,7 @@ import org.retail.entity.client.Customer;
 @DiscriminatorValue("CC")
 public class CreditCard extends BillingDetails {
 
+    private static final long serialVersionUID = -3082087016346734227L;
     private String ccNumber;
 
     public CreditCard() {
