@@ -1,5 +1,6 @@
 package org.retail.bean;
 
+import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import javax.ejb.EJBException;
@@ -7,6 +8,7 @@ import javax.ejb.Stateful;
 import javax.ejb.StatefulTimeout;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import org.retail.entity.Family;
 import org.retail.entity.Feature;
 import org.retail.entity.Product;
@@ -23,7 +25,7 @@ import org.retail.service.exception.RetailException;
 public class RequestBean {
     
     protected static final Logger logger = Logger.getLogger(RequestBean.class.getName());
-    @PersistenceContext
+    @PersistenceUnit
     EntityManager em;
     
     public void createProduct(
@@ -54,11 +56,25 @@ public class RequestBean {
         
     }
     
-    public void createroductUnit() {
+    public void createProductUnit(
+            Product product,
+            Unit stockUnit,
+            Unit orderUnit,
+            Unit viewUnit,
+            BigDecimal orderMultiplier,
+            BigDecimal viewMultiplier) {
         try {
-            ProductUnit productUnit = new ProductUnit();
+            ProductUnit productUnit = new ProductUnit(product,
+                    stockUnit,
+                    orderUnit,
+                    viewUnit,
+                    orderMultiplier,
+                    viewMultiplier);
+            em.persist(productUnit);
         } catch (Exception ex) {
             throw new EJBException("cannot create a new product unit", ex);
         }
     }
+    
+    
 }

@@ -1,11 +1,6 @@
 package org.retail.usecase;
 
-import com.sun.security.ntlm.Client;
 import javax.ejb.Stateless;
-import javax.ejb.TransactionAttribute;
-import javax.ejb.TransactionAttributeType;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.retail.entity.Product;
@@ -16,14 +11,23 @@ import org.retail.entity.Product;
  * @author the-ramones
  */
 @Stateless
-@TransactionManagement(TransactionManagementType.CONTAINER)
-@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+//@TransactionManagement(TransactionManagementType.CONTAINER)
+//@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class ContainerManagedJtaTransaction {
 
-    @PersistenceContext
+   // @PersistenceContext
     EntityManager em;
 
-    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    /*
+     * java.lang.RuntimeException: 
+     *  The persistence-context-ref-name [org.retail.usecase.ContainerManagedJtaTransaction/em] 
+     *  in module [org_retail-ejb_ejb_1.0-SNAPSHOT] resolves to a persistence unit called [retailPU]
+     *  which is of type RESOURCE_LOCAL. Only persistence units with transaction type JTA can be 
+     *  used as a container managed entity manager. 
+     * 
+     *  Please verify your application.
+     */
+    //@TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void perform() {
         Product product = em.find(Product.class, 1L);
         product.setDescription("A new description");

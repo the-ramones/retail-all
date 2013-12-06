@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
  */
 public class LocalTransaction {
 
-    @PersistenceContext
+    //@PersistenceContext
     EntityManager em;
 
     public void perform() {

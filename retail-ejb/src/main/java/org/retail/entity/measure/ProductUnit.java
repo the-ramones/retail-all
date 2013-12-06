@@ -31,7 +31,26 @@ public class ProductUnit implements Serializable {
 
     public ProductUnit() {
     }
-    
+
+    public ProductUnit(Product product, Unit stockUnit, Unit orderUnit, Unit viewUnit, BigDecimal orderMultiplier, BigDecimal viewMultiplier) {
+        this.product = product;
+        this.stockUnit = stockUnit;
+        this.orderUnit = orderUnit;
+        this.viewUnit = viewUnit;
+        this.orderMultiplier = orderMultiplier;
+        this.viewMultiplier = viewMultiplier;
+    }
+
+    public ProductUnit(Long productUnitId, Product product, Unit stockUnit, Unit orderUnit, Unit viewUnit, BigDecimal orderMultiplier, BigDecimal viewMultiplier) {
+        this.productUnitId = productUnitId;
+        this.product = product;
+        this.stockUnit = stockUnit;
+        this.orderUnit = orderUnit;
+        this.viewUnit = viewUnit;
+        this.orderMultiplier = orderMultiplier;
+        this.viewMultiplier = viewMultiplier;
+    }
+
     @Id
     public Long getProductUnitId() {
         return productUnitId;

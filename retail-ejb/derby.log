@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+2013-12-06 12:37:37.732 GMT:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685): экземпляр a816c00e-0142-c7e9-cad3-000002728358
+в каталоге базы данных C:\Documents and Settings\Кулицкий\Local Settings\Temp\gfembed1725400541694429319tmp\lib\databases\embedded_default  sun.misc.Launcher$AppClassLoader@1eed786 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0-b147
+Запущен загрузчик классов базы данных - derby.database.classpath=''
+----------------------------------------------------------------
+2013-12-06 12:38:29.985 GMT:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685): экземпляр 63454207-0142-c7e9-cad3-000002728358
+в каталоге базы данных C:\Documents and Settings\Кулицкий\Local Settings\Temp\gfembed1725400541694429319tmp\lib\databases\ejbtimer  sun.misc.Launcher$AppClassLoader@1eed786 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0-b147
+Запущен загрузчик классов базы данных - derby.database.classpath=''
