@@ -77,8 +77,8 @@ public class Product implements Serializable {
         this.itemId = itemId;
     }
 
-    @OneToOne
-    @PrimaryKeyJoinColumn                    // join tables on PrimaryKey
+    @OneToOne(cascade= CascadeType.ALL)   
+    @PrimaryKeyJoinColumn               // join tables on PrimaryKey
     public ProductUnit getProductUnit() {
         return productUnit;
     }

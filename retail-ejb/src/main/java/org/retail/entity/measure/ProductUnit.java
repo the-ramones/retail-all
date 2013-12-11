@@ -2,12 +2,16 @@ package org.retail.entity.measure;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import org.retail.entity.Product;
 
@@ -52,6 +56,7 @@ public class ProductUnit implements Serializable {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getProductUnitId() {
         return productUnitId;
     }
@@ -60,7 +65,7 @@ public class ProductUnit implements Serializable {
         this.productUnitId = productUnitId;
     }
 
-    @OneToOne(mappedBy = "productUnit")
+    @OneToOne(mappedBy = "productUnit", cascade = CascadeType.ALL)
     public Product getProduct() {
         return product;
     }
@@ -69,7 +74,7 @@ public class ProductUnit implements Serializable {
         this.product = product;
     }
 
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public Unit getStockUnit() {
         return stockUnit;
     }
@@ -78,7 +83,7 @@ public class ProductUnit implements Serializable {
         this.stockUnit = stockUnit;
     }
 
-    @ManyToOne(optional = true, fetch = FetchType.EAGER)
+    @ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public Unit getOrderUnit() {
         return orderUnit;
     }
@@ -87,7 +92,7 @@ public class ProductUnit implements Serializable {
         this.orderUnit = orderUnit;
     }
 
-    @ManyToOne(optional = true, fetch = FetchType.EAGER)
+    @ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public Unit getViewUnit() {
         return viewUnit;
     }
